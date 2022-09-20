@@ -1,5 +1,5 @@
 {
-  "name": "nblocks-react-native",
+  "name": "@nebulr-group/nblocks-react-native",
   "version": "0.1.0",
   "description": "test",
   "main": "lib/commonjs/index",
