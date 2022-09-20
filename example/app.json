@@ -1,0 +1,23 @@
+{
+  "name": "nblocks-react-native-example",
+  "displayName": "NblocksReactNative Example",
+  "expo": {
+    "name": "nblocks-react-native-example",
+    "slug": "nblocks-react-native-example",
+    "description": "Example app for nblocks-react-native",
+    "privacy": "public",
+    "version": "1.0.0",
+    "platforms": [
+      "ios",
+      "android",
+      "web"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "jsEngine": "hermes",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
