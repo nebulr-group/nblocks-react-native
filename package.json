@@ -1,7 +1,7 @@
 {
   "name": "@nebulr-group/nblocks-react-native",
   "version": "0.1.0",
-  "description": "test",
+  "description": "This library contains components that allow you to speed up your app development by making use of Nblocks powers in a true plug-n-play manner.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
   "types": "lib/typescript/index.d.ts",
