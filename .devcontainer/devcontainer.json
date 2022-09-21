@@ -1,0 +1,33 @@
+{
+  "name": "Nblocks React Native",
+  "build": {
+    "dockerfile": "../Dockerfile",
+    "target": "dev",
+    "context": ".."
+  },
+  // 'features' are in development and are subject to breaking changes
+  // once stable, add them https://code.visualstudio.com/docs/remote/containers#_create-a-devcontainerjson-file:~:text=devcontainers/features%20repository
+  // "features": {},
+  "containerEnv": {},
+  "runArgs": [],
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "terminal.integrated.profiles.shell.linux": "/bin/bash"
+      },
+      // Add the IDs of extensions you want installed when the container is created.
+      "extensions": [
+        "dbaeumer.vscode-eslint",
+        "esbenp.prettier-vscode",
+        "mikestead.dotenv",
+        "redhat.vscode-yaml"
+      ]
+    }
+  },
+  "appPort": ["19000:19000", "19002:19002", "19006:19006"],
+  "workspaceMount": "source=${localWorkspaceFolder},target=/nblocks-react-native,type=bind",
+  "workspaceFolder": "/nblocks-react-native",
+  //this improves container performance
+  "mounts": ["target=${containerWorkspaceFolder}/node_modules,type=volume"],
+  "postCreateCommand": "bash .devcontainer/init.sh ${containerWorkspaceFolder}"
+}
