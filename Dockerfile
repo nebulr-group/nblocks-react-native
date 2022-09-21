@@ -16,16 +16,10 @@ WORKDIR "/nblocks-react-native"
 RUN mkdir example
 COPY --link "package.json" "./"
 COPY --link [ "example/package.json", "example/yarn.lock", "./example/"]
-COPY --link "tsconfig.json" "./"
+COPY --link ["tsconfig.json", "tsconfig.build.json", "./"]
 COPY --link "example/tsconfig.json" "./example/"
 
 # Refering to base, and adding new build stage labeled 'dev'
 FROM base as dev
-# Installing yarn
-# RUN npm install --global yarn
-# Installing prod and dev dep for the lib
-RUN yarn install
-RUN cd example; yarn
 # Copy rest of the projects source code to container env
 COPY . .
-# Run build with installed dep
