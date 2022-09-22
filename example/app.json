@@ -5,8 +5,18 @@
     "name": "nblocks-react-native-example",
     "slug": "nblocks-react-native-example",
     "description": "Example app for nblocks-react-native",
-    "privacy": "public",
     "version": "1.0.0",
+    "privacy": "public",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
     "platforms": [
       "ios",
       "android",
@@ -14,6 +24,15 @@
     ],
     "ios": {
       "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     },
     "jsEngine": "hermes",
     "assetBundlePatterns": [
