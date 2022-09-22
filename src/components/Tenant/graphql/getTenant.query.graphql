@@ -1,0 +1,11 @@
+query GetTenant {
+  getTenant {
+    id
+    name
+    locale
+    logo
+    plan
+    mfa
+    createdAt
+  }
+}

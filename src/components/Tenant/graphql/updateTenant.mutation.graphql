@@ -1,0 +1,11 @@
+mutation UpdateTenant($tenant: TenantInput!) {
+  updateTenant(tenant: $tenant) {
+    id
+    name
+    locale
+    logo
+    plan
+    mfa
+    createdAt
+  }
+}
