@@ -1,12 +1,8 @@
 
 import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { useAuth, DefaultPaddingComponent, TitleComponent, DividerComponent, NblocksButton } from 'nblocks-react-native';
 import React, { FunctionComponent } from 'react';
-import {DefaultPaddingComponent} from '../../components/shared/DefaultPaddingComponent';
-import {DividerComponent} from '../../components/shared/DividerComponent';
-import {NblocksButton} from '../../components/shared/NblocksButton';
-import {TitleComponent} from '../../components/shared/TitleComponent';
-import { useAuth } from '../../hooks/auth-context';
-import { RoutesStackParams } from '../../routes/Routes';
+import { RoutesStackParams } from '../Routes';
 
 const HomeScreen: FunctionComponent<{}> = () => {
 
