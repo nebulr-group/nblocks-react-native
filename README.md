@@ -26,13 +26,13 @@ Developement instructions further down.
 ### React native
 
 ```
-npm install react-native-nblocks
+npm install nblocks-react-native
 ```
 
 ### Expo
 
 ```
-expo install react-native-nblocks
+expo install nblocks-react-native
 ```
 
 Wrap your app with the `NblocksProvider` in your top most App component.
