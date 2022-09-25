@@ -1,3 +1,4 @@
+import React from "react";
 import { NavigationProp, useNavigation } from "@react-navigation/native";
 import { FunctionComponent, useState } from "react";
 import { useTranslation } from "react-i18next";
