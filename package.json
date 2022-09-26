@@ -1,6 +1,6 @@
 {
-  "name": "nblocks-react-native",
-  "version": "0.1.0",
+  "name": "@nebulr-group/react-native-nblocks",
+  "version": "0.1.0-beta",
   "description": "This library contains components that allow you to speed up your app development by making use of Nblocks powers in a true plug-n-play manner.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -10,10 +10,6 @@
   "files": [
     "src",
     "lib",
-    "android",
-    "ios",
-    "cpp",
-    "nblocks-react-native.podspec",
     "!lib/typescript/example",
     "!android/build",
     "!ios/build",
@@ -26,7 +22,7 @@
     "typescript": "tsc --noEmit",
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
-    "release": "release-it",
+    "npm-publish-beta": "yarn prepare && npm publish --access public --tag beta",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn"
   },

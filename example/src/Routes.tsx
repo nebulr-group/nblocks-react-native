@@ -1,7 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import React, { FunctionComponent } from 'react';
-import { useAuth, BrandExpoScreen, UserProfileScreen, TenantScreen, UsersScreen, AuthRoutes, AuthRoutesStackParams, ChooseUserScreen } from "nblocks-react-native";
+import { useAuth, BrandExpoScreen, UserProfileScreen, TenantScreen, UsersScreen, AuthRoutes, AuthRoutesStackParams, ChooseUserScreen } from "react-native-nblocks";
 import { HomeScreen } from './Home/HomeScreen';
 
 

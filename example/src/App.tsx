@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { SafeAreaView, StyleSheet } from "react-native";
-import { NblocksProvider } from "nblocks-react-native";
+import { NblocksProvider } from "react-native-nblocks";
 import { Routes } from "./Routes";
 
 // This is the IP to your running docker container on your local network. This must be reachable from your mobile device that is running the app.
