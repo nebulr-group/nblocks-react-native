@@ -46,13 +46,15 @@
     "@apollo/react-hooks": "^4.0.0",
     "@babel/core": "^7.12.9",
     "@babel/eslint-parser": "^7.18.2",
+    "@babel/preset-typescript": "7.18.6",
     "@graphql-codegen/cli": "2.6.2",
     "@graphql-codegen/typescript": "2.4.11",
     "@graphql-codegen/typescript-operations": "2.4.0",
     "@graphql-codegen/typescript-react-apollo": "3.2.14",
-    "@react-native-async-storage/async-storage": "^1.17.3",
-    "@react-native-picker/picker": "^2.4.0",
-    "@react-navigation/native": "^6.0.10",
+    "@react-native-async-storage/async-storage": "^1.17.10",
+    "@react-native-community/eslint-config": "^3.0.2",
+    "@react-native-picker/picker": "2.4.4",
+    "@react-navigation/native": "^6.0.8",
     "@react-navigation/native-stack": "^6.6.2",
     "@types/lodash": "^4.14.182",
     "@types/react": "~17.0.21",
@@ -60,46 +62,44 @@
     "apollo-client": "^2.6.10",
     "axios": "^0.27.2",
     "date-fns": "^2.28.0",
-    "graphql": "^16.5.0",
+    "eslint": "^8.4.1",
+    "graphql": "^15.0.0",
     "i18next": "^21.8.12",
     "lodash": "^4.17.21",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-i18next": "11.17.4",
-    "react-native": "~0.68.2",
+    "react": "18.1.0",
+    "react-dom": "^18.1.0",
+    "react-i18next": "^11.17.4",
+    "react-native": "^0.70.0",
     "react-native-builder-bob": "^0.18.3",
-    "react-native-modal": "^13.0.1",
-    "react-native-safe-area-context": "^4.2.4",
-    "react-native-screens": "^3.11.1",
-    "react-native-web": "~0.17.7",
-    "react-native-webview": "^11.18.1",
+    "react-native-modal": "^13.0.0",
+    "react-native-safe-area-context": "^4.3.1",
+    "react-native-screens": "^3.14.1",
+    "react-native-web": "0.17.7",
+    "react-native-webview": "^11.23.0",
     "typescript": "~4.3.5"
   },
   "resolutions": {
-    "@types/react": "17.0.21"
+    "@types/react": "17.0.2"
   },
   "peerDependencies": {
-    "@apollo/client": "^3.6.5",
-    "@apollo/react-hooks": "^4.0.0",
-    "@react-native-async-storage/async-storage": "^1.17.3",
-    "@react-native-picker/picker": "^2.4.0",
-    "@react-navigation/native": "^6.0.10",
-    "@react-navigation/native-stack": "^6.6.2",
-    "apollo-client": "^2.6.10",
-    "axios": "^0.27.2",
-    "date-fns": "^2.28.0",
-    "graphql": "^16.5.0",
-    "i18next": "^21.8.12",
-    "lodash": "^4.17.21",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "@apollo/client": "^3",
+    "@apollo/react-hooks": "^4",
+    "@react-native-async-storage/async-storage": "^1",
+    "@react-native-picker/picker": "^2",
+    "@react-navigation/native": "^6",
+    "@react-navigation/native-stack": "^6",
+    "apollo-client": "^2",
+    "axios": "^0.27",
+    "date-fns": "^2",
+    "graphql": "^14 || ^15",
+    "i18next": "^21",
+    "lodash": "^4",
+    "react": "^17 || ^18",
     "react-i18next": "11.17.4",
-    "react-native": "~0.68.2",
-    "react-native-modal": "^13.0.1",
-    "react-native-safe-area-context": "^4.2.4",
-    "react-native-screens": "^3.11.1",
-    "react-native-web": "~0.17.7",
-    "react-native-webview": "^11.18.1"
+    "react-native": ">=0.65",
+    "react-native-modal": "^13",
+    "react-native-screens": "^3",
+    "react-native-webview": "^11"
   },
   "react-native-builder-bob": {
     "source": "src",
@@ -114,5 +114,16 @@
         }
       ]
     ]
-  }
+  },
+  "eslintConfig": {
+    "root": true,
+    "parser": "@babel/eslint-parser",
+    "extends": [
+      "@react-native-community"
+    ]
+  },
+  "eslintIgnore": [
+    "node_modules/",
+    "lib/"
+  ]
 }
