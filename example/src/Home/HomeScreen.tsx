@@ -1,6 +1,6 @@
 
 import { NavigationProp, useNavigation } from '@react-navigation/native';
-import { useAuth, DefaultPaddingComponent, TitleComponent, DividerComponent, NblocksButton } from 'react-native-nblocks';
+import { useAuth, DefaultPaddingComponent, TitleComponent, DividerComponent, NblocksButton } from 'nblocks-react-native';
 import React, { FunctionComponent } from 'react';
 import { RoutesStackParams } from '../Routes';
 

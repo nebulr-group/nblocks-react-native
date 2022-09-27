@@ -1,6 +1,6 @@
 {
-  "name": "@nebulr-group/react-native-nblocks",
-  "version": "0.1.0-beta",
+  "name": "@nebulr-group/nblocks-react-native",
+  "version": "0.0.1-beta",
   "description": "This library contains components that allow you to speed up your app development by making use of Nblocks powers in a true plug-n-play manner.",
   "main": "lib/commonjs/index",
   "module": "lib/module/index",
@@ -23,6 +23,7 @@
     "lint": "eslint \"**/*.{js,ts,tsx}\"",
     "prepare": "bob build",
     "npm-publish-beta": "yarn prepare && npm publish --access public --tag beta",
+    "npm-publish": "yarn prepare && npm publish --access public",
     "example": "yarn --cwd example",
     "bootstrap": "yarn example && yarn"
   },
