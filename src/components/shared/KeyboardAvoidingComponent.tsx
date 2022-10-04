@@ -38,6 +38,7 @@ const KeyboardAvoidingComponent: FunctionComponent<Props> = ({
     scrollBounces: true,
     showScrollIndicator: true,
     keyboardDismissMode: "none",
+    contentContainerStyle: {},
   };
 
   if (config === undefined) {
