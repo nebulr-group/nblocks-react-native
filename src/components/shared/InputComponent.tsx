@@ -14,8 +14,11 @@ const TextInputComponent:FunctionComponent<{
     value: string;
     onChangeText: ((text: string) => void);
     onSubmitEditing?: (() => void);
+    onPressIn?: (() => void);
+    onFocus?: (() => void);
+    onBlur?: (() => void);
     style?: ViewStyle | TextStyle | ImageStyle;
-}> = ({type, label, multiline, placeholder, value, onChangeText, style: customStyle, onSubmitEditing}) => {
+}> = ({type, label, multiline, placeholder, value, onChangeText, style: customStyle, onSubmitEditing, onPressIn, onFocus, onBlur}) => {
     const {styles} = useTheme();
 
     return (
@@ -32,6 +35,9 @@ const TextInputComponent:FunctionComponent<{
                 value={value}
                 placeholder={placeholder}
                 onChangeText={(text) => onChangeText(text)}
+                onPressIn={() => {onPressIn ? onPressIn() : undefined}}
+                onFocus-={() => {onFocus ? onFocus() : undefined}}
+                onBlur={() => {onBlur ? onBlur() : undefined}}
             />
         </InputGroupComponent>
     )
