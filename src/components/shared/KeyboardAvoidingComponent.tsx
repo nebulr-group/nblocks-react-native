@@ -52,17 +52,14 @@ const KeyboardAvoidingComponent: FunctionComponent<Props> = ({
       ...config,
     };
   }
-  // If scroll is enabled
-  if (useScroll) {
+
+  const renderKeyboardAvoidingView = (
+    config: Config,
+    children: React.ReactNode,
+    useBehavior: boolean
+  ) => {
     return (
-      <ScrollView
-        style={{ flex: 1 }}
-        overScrollMode={config.scrollMode}
-        bounces={config.scrollBounces}
-        contentContainerStyle={config.contentContainerStyle}
-        showsVerticalScrollIndicator={config.showScrollIndicator}
-        keyboardDismissMode={config.keyboardDismissMode}
-      >
+      <Fragment>
         {useBehavior ? (
           <KeyboardAvoidingView
             style={{ flex: 1 }}
@@ -76,24 +73,28 @@ const KeyboardAvoidingComponent: FunctionComponent<Props> = ({
             {children}
           </KeyboardAvoidingView>
         )}
+      </Fragment>
+    );
+  };
+
+  // If scroll is enabled
+  if (useScroll) {
+    return (
+      <ScrollView
+        style={{ flex: 1 }}
+        overScrollMode={config.scrollMode}
+        bounces={config.scrollBounces}
+        contentContainerStyle={config.contentContainerStyle}
+        showsVerticalScrollIndicator={config.showScrollIndicator}
+        keyboardDismissMode={config.keyboardDismissMode}
+      >
+        {renderKeyboardAvoidingView(config, children, useBehavior)}
       </ScrollView>
     );
   }
   return (
     <Fragment>
-      {useBehavior ? (
-        <KeyboardAvoidingView
-          style={{ flex: 1 }}
-          behavior={config.behavior}
-          enabled
-        >
-          {children}
-        </KeyboardAvoidingView>
-      ) : (
-        <KeyboardAvoidingView style={{ flex: 1 }} enabled>
-          {children}
-        </KeyboardAvoidingView>
-      )}
+      {renderKeyboardAvoidingView(config, children, useBehavior)}
     </Fragment>
   );
 };
