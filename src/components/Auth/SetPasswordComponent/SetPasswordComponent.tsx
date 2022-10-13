@@ -18,7 +18,7 @@ const SetPasswordComponent: FunctionComponent = () => {
   const [wasTouched, setWasTouched] = useState(false);
   const [loading, setLoading] = useState(false);
   const [requestErrorStatus, setRequestErrorStatus] = useState(false);
-  const { colors } = useTheme();
+  const { colors, styles } = useTheme();
   // Parse url for auth token
   const url = Linking.useURL();
   let token:
@@ -94,16 +94,25 @@ const SetPasswordComponent: FunctionComponent = () => {
             value={confirmPassword}
             onChangeText={(text) => setConfirmPassword(text)}
           />
-          <NblocksButton
-            title="Set New Password"
-            type={!requestErrorStatus ? "primary" : "danger"}
-            onPress={() => submitPassword()}
-            disabled={!formIsValid || requestErrorStatus}
-          />
+          {!requestErrorStatus && (
+            <NblocksButton
+              title="Set New Password"
+              type={!requestErrorStatus ? "primary" : "danger"}
+              onPress={() => submitPassword()}
+              disabled={!formIsValid || requestErrorStatus}
+            />
+          )}
           {requestErrorStatus && (
-            <Text style={{ color: colors.dangerColor }}>
-              The link has expired, you'll need to generate a new one again.
-            </Text>
+            <Fragment>
+              <Text style={{ color: colors.dangerColor, marginVertical: 12 }}>
+                The link has expired, you'll need to generate a new one again.
+              </Text>
+              <NblocksButton
+                title="◀︎ Generate New Link"
+                type={"primary"}
+                onPress={() => navigation.navigate("ResetPassword")}
+              />
+            </Fragment>
           )}
         </BaseStyleComponent>
       )}
