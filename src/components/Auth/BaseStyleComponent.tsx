@@ -30,10 +30,12 @@ const BaseStyleComponent: FunctionComponent<{
     );
 
     if (Platform.OS === "ios") {
+      hidePrivacyPolicyCTA.remove();
       hidePrivacyPolicyCTA = Keyboard.addListener("keyboardWillShow", () => {
         setKeyboardState(true);
       });
 
+      displayPrivacyPolicyCTA.remove();
       displayPrivacyPolicyCTA = Keyboard.addListener("keyboardWillHide", () => {
         setKeyboardState(false);
       });
