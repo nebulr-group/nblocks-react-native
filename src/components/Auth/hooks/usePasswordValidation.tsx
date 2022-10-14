@@ -1,4 +1,5 @@
 import { Dispatch, SetStateAction, useState } from "react";
+import { ValidationMessageObject } from "../ValidationMessageComponent/ValidationMessageComponent";
 
 // Configuration type
 export type Config = {
@@ -12,10 +13,6 @@ export type Config = {
     onInvalidCustomStrenght: string;
   };
 };
-// Password Validation Fedback Log Format
-export interface PasswordValidationPropmtMessage {
-  error?: string;
-}
 
 export type ValidationErrors = {
   [key: string]: any;
@@ -24,7 +21,7 @@ export type ValidationErrors = {
 // Password Validation Hook Type
 type PasswordValidationHook = (config?: Config) => {
   passwordIsValid: boolean;
-  feedbackLog: PasswordValidationPropmtMessage[];
+  feedbackLog: ValidationMessageObject[];
   password: string;
   onPasswordTextChangeValidation: (text: string, regex?: RegExp) => void;
   onResetPasswordInputText: () => void;

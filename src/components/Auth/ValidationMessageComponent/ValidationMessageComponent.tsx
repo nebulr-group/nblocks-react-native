@@ -1,11 +1,15 @@
 import { Text } from "react-native";
 import React, { Fragment, FunctionComponent } from "react";
 import uuid from "react-native-uuid";
-import { PasswordValidationPropmtMessage } from "../hooks/usePasswordValidation";
 import { useTheme } from "../../../hooks/theme-context";
 
+// Password Validation Fedback Log Format
+export interface ValidationMessageObject {
+  error?: string;
+}
+
 const ValidationMessageComponent: FunctionComponent<{
-  feedbackLog: PasswordValidationPropmtMessage[];
+  feedbackLog: ValidationMessageObject[];
   style?: {};
 }> = ({ feedbackLog, style }) => {
   const { colors } = useTheme();
