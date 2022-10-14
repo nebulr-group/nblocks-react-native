@@ -109,7 +109,7 @@ const SetPasswordComponent: FunctionComponent = () => {
               </Text>
               <NblocksButton
                 title="◀︎ Generate New Link"
-                type={"primary"}
+                type={"danger"}
                 onPress={() => navigation.navigate("ResetPassword")}
               />
             </Fragment>
