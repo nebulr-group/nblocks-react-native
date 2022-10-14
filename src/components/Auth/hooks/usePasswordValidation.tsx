@@ -1,7 +1,26 @@
 import { Dispatch, SetStateAction, useState } from "react";
 import { ValidationMessageObject } from "../ValidationMessageComponent/ValidationMessageComponent";
 
-// Configuration type
+/**
+ * Object, containing custom configuration map for
+ * overriding the default settings of usePasswordValidation hook.
+ *
+ * @remarks
+ * This type is part of usePasswordValidation hook.
+ *
+ * @example
+ * Here's a simple use case example:
+ * ```
+ * // Object containing configuration for
+ * // overriding the usePasswordValidation default event messages
+ * const customConfig: Config = {
+ *    messages: {
+ *      onEmptyString: "Password field is empty!",
+ *      onMinLenght: "Your password must contain at leaast 10 characters."
+ *    }
+ * }
+ * ```
+ */
 export type Config = {
   messages: {
     onEmptyString: string;
@@ -14,11 +33,25 @@ export type Config = {
   };
 };
 
+/**
+ * Validation message object map type.
+ *
+ * @remarks
+ * This type is part of passwordStandardStrengthValidator function. It is used to
+ * describe the ValidationErrors format in which it will be saved.
+ */
 export type ValidationErrors = {
   [key: string]: any;
 };
 
-// Password Validation Hook Type
+/**
+ * Password validation hook type.
+ *
+ * @remark
+ * This type is used to define the of password validation hook.
+ *
+ * @param config - Custom configuration object.
+ */
 type PasswordValidationHook = (config?: Config) => {
   passwordIsValid: boolean;
   feedbackLog: ValidationMessageObject[];
@@ -28,6 +61,36 @@ type PasswordValidationHook = (config?: Config) => {
   setPassword: Dispatch<SetStateAction<string>>;
 };
 
+/**
+ * Password validation hook.
+ *
+ * @remark
+ * The password validation hook provides you with all key components for validating user password input
+ * You can use our default configuration or provide your own.
+ * @param config
+ * @returns
+ * The object containing password validity state (boolean), feedback log, password (string), validation callbacks and reset callbacks.
+ *
+ * @example
+ * ```
+ * // Custom configuration with custom messages
+ * const customConfig: Config = {
+ *    messages: {
+ *      onEmptyString: "Password field is empty!",
+ *      onMinLenght: "Your password must contain at leaast 10 characters."
+ *    }
+ * }
+ *
+ *
+ * // Init usePasswordValidaiton hook
+ * const { passwordIsValid: newPasswordIsValid,
+ *         feedbackLog: newPasswordFeedbackLog,
+ *         password: newPassword,
+ *         onPasswordTextChangeValidation,
+ *         onResetPasswordInputText: onNewPasswordResetPasswordInputText,
+ *         setPassword: setNewPassword } = usePasswordValidation(customConfig)
+ * ```
+ */
 const usePasswordValidation: PasswordValidationHook = (config) => {
   // Password Text State
   const [password, setPassword] = useState("");
