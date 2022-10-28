@@ -67,6 +67,10 @@ export class AuthService {
       await this.httpClient.post<void>(this.ENDPOINTS.password, {username});
     }
 
+    async updatePassword(token:string, password:string): Promise<void> {
+      await this.httpClient.put(this.ENDPOINTS.password, {token, password});
+  }
+
     async commitMfaCode(mfaCode:string): Promise<void> {
       const result = await this.httpClient.post<{mfaToken: string}>(this.ENDPOINTS.commitMfaCode, {mfaCode});
       await AuthService.setMfaToken(result.data.mfaToken);

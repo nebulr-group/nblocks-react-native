@@ -4,6 +4,7 @@
   "expo": {
     "name": "nblocks-react-native-example",
     "slug": "nblocks-react-native-example",
+    "scheme": "nebulrgroup",
     "description": "Example app for nblocks-react-native",
     "version": "1.0.0",
     "privacy": "public",
@@ -17,11 +18,7 @@
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "ios": {
       "supportsTablet": true
     },
@@ -35,8 +32,6 @@
       "favicon": "./assets/favicon.png"
     },
     "jsEngine": "hermes",
-    "assetBundlePatterns": [
-      "**/*"
-    ]
+    "assetBundlePatterns": ["**/*"]
   }
 }
